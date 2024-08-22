@@ -1,18 +1,16 @@
 .navbar {
-    background-color: #333; /* Base background color for the navbar */
-    color: white;
+    background-color:  transparent;
     padding: 15px;
-    width: 30%;
+    width: auto;
     position: fixed;
-    bottom: 0;
+    top: 0;
     align-self:center;
-    height: 60px; /* Adjust height as needed */
+    height: 20px; /* Adjust height as needed */
     z-index: 1000;
-    clip-path: polygon(0% 100%, 100% 100%, 90% 0%, 10% 0%);
     display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    justify-content: space-between;
+
   }
   
   .navbar ul {
@@ -40,3 +38,38 @@
     text-decoration: underline;
   }
   
+
+.money-display {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #303030b9;
+  border-radius: 20px;
+  padding: 5px 10px;
+  width: 130px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.money-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+.money-display span {
+  font-size: 14px;
+  color: white;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.level-display{
+  display: flex;
+  justify-content: flex-start;
+  background-color: #303030b9;
+  letter-spacing: 2px;  
+  border-radius: 20px;
+  padding: 5px 10px;
+  color: white;
+  width: auto; 
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}

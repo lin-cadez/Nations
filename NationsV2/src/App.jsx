@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import Oil from './components/Oil/Oil';
+import Farm from './components/Farm/Farm';
 import Home from './components/Home/Home';
 import Register from './components/Register/Register';
 import Navbar from './components/Navbar/Navbar';
@@ -19,6 +20,7 @@ function App() {
           <div className="content">
             <Routes>
               <Route path="/" element={isLoggedIn ? <Home /> : <Navigate to="/register" />} />
+              <Route path="/farm" element={isLoggedIn ? <Farm /> : <Navigate to="/register" />} />
               <Route path="/oil" element={isLoggedIn ? <Oil /> : <Navigate to="/register" />} />
               <Route path="/register" element={<Register />} />
             </Routes>

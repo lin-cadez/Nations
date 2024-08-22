@@ -3,8 +3,19 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  width: 100%;
+  width: 400px;
+  font-family: 'Permanent Marker', cursive;
   overflow: hidden; /* Prevent scrolling */
+}
+
+.svg-icon {
+  width: 25px;
+  height: 25px;
+
+}
+
+.inverted {
+  filter: invert(1);
 }
 
 .app-container {

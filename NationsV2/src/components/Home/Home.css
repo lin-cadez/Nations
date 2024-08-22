@@ -6,12 +6,17 @@
   height: 100%;
   width: 100%;
   background-color: #f0f0f0;
+  background: linear-gradient(
+    to top, /* Direction of the gradient */
+    #FF6F00, /* Bottom color (dark orange) */
+    #FFA726  /* Top color (lighter orange) */
+  );;
   overflow: hidden;
 }
 
 .ball {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   scale: 1;
   border-radius: 50%;
   cursor: pointer;
@@ -30,6 +35,8 @@ button {
   border-radius: 5px;
   padding: 10px 20px;
   font-size: 16px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bolder;
   cursor: pointer;
   border: none;
   color: white;
@@ -37,10 +44,10 @@ button {
 }
 
 button.enabled {
-  background-color: green;
+  background-color: #018f06 ;
 }
 
 button.disabled {
-  background-color: red;
+  background-color: #9d0100;
   cursor: not-allowed;
 }

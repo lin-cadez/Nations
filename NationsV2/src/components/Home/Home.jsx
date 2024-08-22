@@ -24,10 +24,7 @@ function Home() {
 
   return (
     <div className="home-container">
-      <h1>Home Page</h1>
-      <p>Money: ${data.money}</p>
-      <p>Level: {data.level}</p>
-        <p>{levels[(data.level)-1].label}</p>
+        <h2>{levels[(data.level)-1].label}</h2>
         <img className="ball" onClick={handleBallClick} src={levels[(data.level)-1].imageUrl} alt="Ball" />
       <button
         className={buttonClass}
