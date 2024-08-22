@@ -1,0 +1,46 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+
+.ball {
+  width: 100px;
+  height: 100px;
+  scale: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+
+.ball:active {
+  scale: 0.9;
+}
+
+button {
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  margin-top: 20px;
+}
+
+button.enabled {
+  background-color: green;
+}
+
+button.disabled {
+  background-color: red;
+  cursor: not-allowed;
+}

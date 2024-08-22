@@ -1,0 +1,19 @@
+/* Ensure the html and body take up the full height of the viewport */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Make the container take up the full viewport height */
+}
+
+.content {
+  flex: 1; /* Allow content to expand and fill available space */
+  overflow: auto;
+}

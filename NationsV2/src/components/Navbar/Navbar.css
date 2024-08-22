@@ -1,0 +1,42 @@
+.navbar {
+    background-color: #333; /* Base background color for the navbar */
+    color: white;
+    padding: 15px;
+    width: 30%;
+    position: fixed;
+    bottom: 0;
+    align-self:center;
+    height: 60px; /* Adjust height as needed */
+    z-index: 1000;
+    clip-path: polygon(0% 100%, 100% 100%, 90% 0%, 10% 0%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar li {
+    margin: 0 15px;
+  }
+  
+  .navbar a, .navbar button {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .navbar a:hover, .navbar button:hover {
+    text-decoration: underline;
+  }
+  
