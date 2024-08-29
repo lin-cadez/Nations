@@ -1,6 +1,9 @@
 {
   "name": "nationsv2",
   "private": true,
+  "engines": {
+  "node": ">=14.0.0"
+},
   "version": "0.0.0",
   "type": "module",
   "scripts": {
