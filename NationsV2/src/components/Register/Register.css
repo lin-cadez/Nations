@@ -1,0 +1,54 @@
+/* Style for the register container */
+.register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #f0f0f0;
+    background: linear-gradient(
+      to top,
+      #FF6F00, /* Bottom color (dark orange) */
+      #FFA726  /* Top color (lighter orange) */
+    );
+  }
+  
+  /* Style for the input field */
+  .register-input {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  /* Style for the register button */
+  .register-button {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .register-button:disabled {
+    background-color: #ccc;
+  }
+  
+  /* Additional styling for the h2 title */
+  .register-container h2 {
+    margin-bottom: 30px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+  

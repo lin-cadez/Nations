@@ -8,11 +8,10 @@
     z-index: 1000;
     display: flex;
     justify-content: center;
-    background: linear-gradient(
-      to bottom, /* Direction of the gradient */
-      #ffa122, /* Bottom color (dark orange) */
-       #ff9f2200 /* Top color (lighter orange) */
-    );
+    mask: linear-gradient(to top, transparent, black 14%);
+    backdrop-filter: blur(10px) contrast(120%);
+    -webkit-backdrop-filter: blur(10px) contrast(120%);
+
 
   }
   

@@ -18,11 +18,12 @@ function Navbar() {
     } else if (location.pathname === '/farm') {
       return (
         <div className="money-display">
-          <span>{data.wheat}</span>
-          <img className='money-icon inverted' src='icons/wheat.svg' alt='Wheat' />
+          <span>{data.wheat || 0} </span>
+          <img className='money-icon inverted' src='icons/wheat_icon.svg' alt='wheat' />
         </div>
       );
-    } else {
+    }
+    else {
       return (
         <div className="money-display">
           <span>{data.money}</span>

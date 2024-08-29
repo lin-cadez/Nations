@@ -18,7 +18,7 @@
   width: 200px;
   height: 200px;
   scale: 1;
-  border-radius: 50%;
+  border-radius: 10%;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -29,7 +29,7 @@
 
 .ball:active {
   
-  transition: scale 0.3s;
+  transition: scale 0.5s;
   scale: 0.9;
 }
 
@@ -53,4 +53,140 @@
 .home-container button.disabled {
   background-color: #9d0100;
   cursor: not-allowed;
+}
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: #f0f0f0;
+}
+
+.ball-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ball {
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+}
+
+.defuse-timer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 5px solid rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.defuse-progress {
+  height: 100%;
+  background-color: red;
+  transition: width 0.1s linear;
+}
+
+button.enabled {
+  background-color: green;
+}
+
+button.disabled {
+  background-color: gray;
+}
+
+.bomb-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.bomb-progress-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* Prevent interference with bomb clicks */
+}
+
+.defuse-timer {
+  position: absolute; /* Ensure it's positioned over the bomb */
+  top: 20%; /* Center it vertically */
+  left: 50%; /* Center it horizontally */
+  transform: translate(-50%, -50%); /* Offset to center */
+  width: 70%; /* Adjust size relative to the bomb */
+  height: 20px; /* Thin bar for the progress */
+  background-color: rgba(255, 255, 255, 0.5); /* Slight transparency */
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.defuse-progress {
+  height: 100%;
+  background-color: green;
+  transition: width 0.1s linear;
+}
+
+
+.bomb-progress-countdown {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: red;
+  font-weight: bold;
+}
+
+
+.explosion-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: red;
+
+  background-image: url("images/explosion.webp");
+  animation-delay: 1s;
+  animation: explosionEffect 2s forwards;
+ 
+
+  z-index: 9999; /* Make sure it covers everything */
+}
+
+@keyframes explosionEffect {
+  
+  0% {
+    background-image: url("images/explosion.webp");
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+  }
+  60% {
+      background-image: url("images/explosion.webp");
+      background-size: cover;
+      background-position: center;
+      opacity: 1;
+  }
+  70% {
+    background-image: none;
+    background-size: cover;
+    background-position: center;
+    background: white;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

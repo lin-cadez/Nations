@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import './App.css';
 import Oil from './components/Oil/Oil';
 import Farm from './components/Farm/Farm';
+import Shop from './components/Shop/Shop';
 import Home from './components/Home/Home';
 import Register from './components/Register/Register';
 import Footer from './components/Footer/Footer';
@@ -25,10 +26,11 @@ function App() {
               <Route path="/farm" element={isLoggedIn ? <Farm /> : <Navigate to="/register" />} />
               <Route path="/oil" element={isLoggedIn ? <Oil /> : <Navigate to="/register" />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/shop" element={isLoggedIn ? <Shop /> : <Navigate to="/register" />} />
             </Routes>
           </div>
           {isLoggedIn && <Footer />}
-          {isLoggedIn && <Popup />} {/* Render Popup component */}
+          {isLoggedIn && <Popup />}
         </div>
       </Router>
     </DataProvider>

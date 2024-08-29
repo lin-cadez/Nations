@@ -1,0 +1,78 @@
+body {
+  overflow: hidden; /* Ensure the page is not scrollable */
+}
+
+.wheel-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #1e1e1e;
+}
+
+h2 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.wheel {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff4757, #1e90ff); /* Initial gradient */
+  position: relative;
+  border: 10px solid #333; /* Enhances the wheel look */
+  box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Shadow for 3D effect */
+  transition: background 3s ease-out; /* Smooth transition for background changes */
+}
+
+.animate-gradient {
+  animation: myanimation 1.5s forwards; /* Apply the gradient animation */
+}
+
+@keyframes myanimation {
+  0% {
+    background: radial-gradient(circle, #ff4757, #1e90ff);
+  }
+  20% {
+    background: radial-gradient(circle, #2ed573, #ff4757);
+  }
+  40% {
+    background: radial-gradient(circle, #ff5252, #2ed573);
+  }
+  60% {
+    background: radial-gradient(circle, #ff5252, #2ed573);
+  }
+  80% {
+    background: radial-gradient(circle, #ff7f50, #ff5252);
+  }
+  100% {
+    background: radial-gradient(circle, #ff4757, #ff7f50);
+  }
+}
+
+
+.spin-button {
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #f39c12;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.spin-button:disabled {
+  background-color: #7f8c8d;
+  cursor: not-allowed;
+}
+
+.timer-label {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+}

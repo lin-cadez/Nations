@@ -1,41 +1,81 @@
-// levels.js
-
 const levels = [
-    {
-      level: 1,
-      imageUrl: '/images/bosnia.png',
-      label: 'Bosnia',
-      upgradeCost: 10,
-      specialMessage: 'You are just starting out!',
-    },
-    {
-      level: 2,
-      imageUrl: '/images/russia.png',
-      label: 'Russia',
-      upgradeCost: 20,
-      specialMessage: 'You are making progress!',
-    },
-    {
-      level: 3,
-      imageUrl: '/images/level3.png',
-      label: 'Advanced Ball',
-      upgradeCost: 430,
-      specialMessage: 'You are becoming a pro!',
-    },
-    {
-      level: 4,
-      imageUrl: '/images/level4.png',
-      label: 'Advanc44ed Ball',
-      upgradeCost: 4033,
-      specialMessage: 'You44 are becoming a pro!',
-    },
-    {
-      level: 5,
-      imageUrl: '/images/level5.png',
-      label: 'Advanced B55all',
-      upgradeCost: 5540,
-      specialMessage: 'You55 are becoming a pro!',
-    },
-  ];
+  {
+    level: 1,
+    imageUrl: '/images/afghanistan.png', // Example for very poor country
+    label: 'Afghanistan',
+    upgradeCost: 100,
+    specialMessage: 'Starting from humble beginnings!',
+  },
+  {
+    level: 2,
+    imageUrl: '/images/india.png', // Example for agriculture
+    label: 'India',
+    upgradeCost: 100,
+    specialMessage: 'Cultivating success!',
+  },
+  {
+    level: 3,
+    imageUrl: '/images/saudi-arabia.png', // Example for oil
+    label: 'Saudi Arabia',
+    upgradeCost: 5000,
+    specialMessage: 'Striking oil-rich prosperity!',
+  },
+  {
+    level: 4,
+    imageUrl: '/images/russia.png', // Added Russia
+    label: 'Russia',
+    upgradeCost: 25000,
+    specialMessage: 'Powering up with strength and resources!',
+  },
+  {
+    level: 5,
+    imageUrl: '/images/brazil.png', // Example for emerging market
+    label: 'Brazil',
+    upgradeCost: 120000,
+    specialMessage: 'Expanding horizons in the tropics!',
+  },
+  {
+    level: 6,
+    imageUrl: '/images/south-africa.png', // Example for a middle-income country
+    label: 'South Africa',
+    upgradeCost: 600000,
+    specialMessage: 'Rising to greater heights!',
+  },
+  {
+    level: 7,
+    imageUrl: '/images/italy.png', // Example for a developed European country
+    label: 'Italy',
+    upgradeCost: 3000000,
+    specialMessage: 'Savoring the taste of success!',
+  },
+  {
+    level: 8,
+    imageUrl: '/images/uk.png', // Example for a wealthy European country
+    label: 'United Kingdom',
+    upgradeCost: 15000000,
+    specialMessage: 'Reigning in global prosperity!',
+  },
+  {
+    level: 9,
+    imageUrl: '/images/germany.png', // Example for a very wealthy European country
+    label: 'Germany',
+    upgradeCost: 75000000,
+    specialMessage: 'Leading with innovation and wealth!',
+  },
+  {
+    level: 10,
+    imageUrl: '/images/us.png', // Example for the richest country
+    label: 'United States',
+    upgradeCost: 1500000000,
+    specialMessage: 'The pinnacle of success and wealth!',
+  },
+  {
+    level: 11,
+    imageUrl: '/images/china.png', // Added China
+    label: 'China',
+    upgradeCost: 75000000000000,
+    specialMessage: 'Rising to the top of the world!',
+  }
+];
 
-  export default levels;
+export default levels;

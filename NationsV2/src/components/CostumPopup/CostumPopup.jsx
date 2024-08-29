@@ -10,7 +10,11 @@ function CostumPopup({
   buttonText,
   imageUrl,
   barrelsProduced,
+  wheatProduced,
 }) {
+  if(!imageUrl || imageUrl === '' || imageUrl === 'default') {
+    imageUrl = 'images/usa_default.png';
+  }
   if (!isOpen) {
     return null; // Do not render if popup is not open
   }
@@ -22,6 +26,7 @@ function CostumPopup({
         {title && <h2>{title}</h2>}
         {message && <p>{message}</p>}
         {barrelsProduced !== undefined && <p>Barrels Produced: {barrelsProduced}</p>}
+        {wheatProduced !== undefined && <p>Wheat Produced: {wheatProduced}</p>}
         <button onClick={onClose}>{buttonText || 'Close'}</button>
       </div>
     </div>
