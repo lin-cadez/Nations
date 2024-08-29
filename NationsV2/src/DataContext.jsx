@@ -54,7 +54,10 @@ export const DataProvider = ({ children }) => {
         }
       }
 
-      return updatedData;
+
+      return {...updatedData,
+        lastActivity: Date.now()/1000,
+      };
     });
   };
 

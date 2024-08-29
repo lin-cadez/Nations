@@ -1,15 +1,18 @@
 .navbar {
     background-color:  transparent;
-    padding: 15px;
-    width: auto;
+
+    padding-top: 15px;
+    width: 100%;
     position: fixed;
-    top: 0;
-    align-self:center;
-    height: 20px; /* Adjust height as needed */
+    height: auto; /* Adjust height as needed */
     z-index: 1000;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    background: linear-gradient(
+      to bottom, /* Direction of the gradient */
+      #ffa122, /* Bottom color (dark orange) */
+       #ff9f2200 /* Top color (lighter orange) */
+    );
 
   }
   
@@ -18,25 +21,15 @@
     padding: 0;
     margin: 0;
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    
   }
   
-  .navbar li {
-    margin: 0 15px;
-  }
-  
-  .navbar a, .navbar button {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .navbar a:hover, .navbar button:hover {
-    text-decoration: underline;
-  }
+
+
   
 
 .money-display {
@@ -45,20 +38,21 @@
   background-color: #303030b9;
   border-radius: 20px;
   padding: 5px 10px;
-  width: 130px;
+  width: 200px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .money-icon {
-  width: 20px;
-  height: 20px;
+  width: 26px;
+  height: 26px;
   margin-left: 5px;
 }
 
 .money-display span {
-  font-size: 14px;
+  font-size: 20px;
   color: white;
   letter-spacing: 2px;
+  font-family: 'Permanent Marker', cursive;
   font-weight: bold;
 }
 
@@ -68,8 +62,12 @@
   background-color: #303030b9;
   letter-spacing: 2px;  
   border-radius: 20px;
+  font-family: 'Permanent Marker', cursive;
+  font-weight: bold;
+  font-size: 20px;
   padding: 5px 10px;
   color: white;
+  padding-left: 12px;
   width: auto; 
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }

@@ -3,7 +3,7 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  width: 400px;
+  width: 100%;
   font-family: 'Permanent Marker', cursive;
   overflow: hidden; /* Prevent scrolling */
 }

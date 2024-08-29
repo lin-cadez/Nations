@@ -5,6 +5,7 @@ import Oil from './components/Oil/Oil';
 import Farm from './components/Farm/Farm';
 import Home from './components/Home/Home';
 import Register from './components/Register/Register';
+import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 import { DataProvider } from './DataContext'; // Import DataProvider
 import Popup from './components/Popup/Popup'; // Import Popup component
@@ -17,6 +18,7 @@ function App() {
       <Router>
         <div className="app-container">
           {isLoggedIn && <Navbar />}
+        
           <div className="content">
             <Routes>
               <Route path="/" element={isLoggedIn ? <Home /> : <Navigate to="/register" />} />
@@ -25,6 +27,7 @@ function App() {
               <Route path="/register" element={<Register />} />
             </Routes>
           </div>
+          {isLoggedIn && <Footer />}
           {isLoggedIn && <Popup />} {/* Render Popup component */}
         </div>
       </Router>

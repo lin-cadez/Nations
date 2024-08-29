@@ -28,10 +28,13 @@
 
 
 .ball:active {
+  
+  transition: scale 0.3s;
   scale: 0.9;
 }
 
-button {
+
+.home-container button {
   border-radius: 5px;
   padding: 10px 20px;
   font-size: 16px;
@@ -43,11 +46,11 @@ button {
   margin-top: 20px;
 }
 
-button.enabled {
+.home-container button.enabled {
   background-color: #018f06 ;
 }
 
-button.disabled {
+.home-container button.disabled {
   background-color: #9d0100;
   cursor: not-allowed;
 }

@@ -1,0 +1,39 @@
+.footer {
+    background-color:  transparent;
+    width: 100%;
+    bottom: 0;  
+    position: fixed;
+    height: fit-content; /* Adjust height as needed */
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    mask: linear-gradient(to bottom, transparent, black 15%);
+   backdrop-filter: blur(4px);
+    background: linear-gradient(
+    to top,       
+    #ff6f00 20%,          
+    #ffa82600            
+);
+
+
+  }
+  
+  .footer ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-inline-start: 0;
+    width: 100%;
+  }
+  
+
+.footer-icon {
+  width: 60px;
+  padding: 10px;
+  border-radius: 20%;
+  border: 5px solid black;
+  
+}
