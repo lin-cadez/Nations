@@ -13,7 +13,7 @@ function Home() {
   const [defuseProgress, setDefuseProgress] = useState(0); // For circular defuse timer
   const [explosionVisible, setExplosionVisible] = useState(false); // Control explosion visibility
   const bombTimerRef = useRef(null);
-  const [gameTime, setGameTime] = useState('0:0:0');
+  const [gameTime, setGameTime] = useState('00:00:00');
   const defuseTimerRef = useRef(null);
   const [clickCount, setClickCount] = useState(0);
   const clickTimerRef = useRef(null);
