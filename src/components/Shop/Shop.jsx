@@ -18,9 +18,37 @@ function Shop() {
   const [nextSpinTime, setNextSpinTime] = useState(data.nextSpinTime || 0);
 
   const rewards = [
-    // List of rewards as before...
+    { name: '1000 Barrels of Oil', value: 1000 },
+    { name: '1 Million Dollars', value: 1000000 },
+    { name: '999 Bushels of Wheat', value: 999 },
+    { name: 'Lose All Your Money', value: -data.money },
+    { name: '100 Gold Bars', value: 100 },
+    { name: '500 Diamonds', value: 500 },
+    { name: 'Trip to the Moon', value: 500000 },
+    { name: 'Lose Half Your Money', value: -data.money / 2 },
+    { name: '10,000 Gallons of Water', value: 10000 },
+    { name: 'Luxury Sports Car', value: 200000 },
+    { name: 'Private Island', value: 1500000 },
+    { name: '1000 Cows', value: 1000 },
+    { name: '10 Tons of Steel', value: 20000 },
+    { name: 'Lose All Your Possessions', value: -data.money * 0.75 },
+    { name: '5,000 Solar Panels', value: 5000 },
+    { name: 'Rare Painting', value: 300000 },
+    { name: '1,000 Bitcoin', value: 30000000 },
+    { name: 'Luxury Yacht', value: 5000000 },
+    { name: 'Lifetime Supply of Chocolate', value: 10000 },
+    { name: 'Lose 1/4 of Your Money', value: -data.money / 4 },
+    { name: 'Private Jet', value: 10000000 },
+    { name: '500 Acres of Land', value: 1000000 },
+    { name: 'Treasure Chest of Gold', value: 500000 },
+    { name: 'Luxury Mansion', value: 10000000 },
+    { name: 'Lose $10,000', value: -10000 },
+    { name: 'Win a Castle', value: 2000000 },
+    { name: 'Set of Luxury Watches', value: 250000 },
+    { name: '20,000 Shares of Stock', value: 200000 },
+    { name: 'Antique Collection', value: 150000 },
   ];
-
+  
   useEffect(() => {
     const interval = setInterval(() => {
       const now = Date.now();
@@ -119,7 +147,7 @@ function Shop() {
 
   return (
     <div className="wheel-container">
-      <button onClick={handleHome()}>HOME</button>
+      <button className='home-button' onClick={handleHome()}>HOME</button>
       
       <h2>GET Your Mystery Gift</h2>
       <div className={`wheel ${spinning ? 'animate-gradient' : ''}`}>

@@ -1,7 +1,7 @@
 const navbarConfig = {
-    oil: 3,
-    farm: 2,
-    shop: 4,
+    oil: 2,
+    farm: 4,
+    shop: 6,
   };
   
   export default navbarConfig;

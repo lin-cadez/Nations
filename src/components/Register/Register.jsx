@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Register.css'; // Import the CSS file
+import { DataContext } from '../../DataContext';
 
 function Register() {
   const [username, setUsername] = useState('');
+  const { data, updateData } = useContext(DataContext);
   const navigate = useNavigate();
 
   const handleRegister = () => {
@@ -12,8 +14,13 @@ function Register() {
       return;
     }
 
-    // Future implementation: Check if username is unique
-    // Example: Check username against an API or a list
+    const existingUser = localStorage.getItem('username');
+    if (!existingUser) {
+      updateData({
+        intialTime: Date.now()
+      });
+  
+    }
 
     localStorage.setItem('username', username);
     navigate('/'); // Navigate to Home page

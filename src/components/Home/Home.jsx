@@ -13,6 +13,7 @@ function Home() {
   const [defuseProgress, setDefuseProgress] = useState(0); // For circular defuse timer
   const [explosionVisible, setExplosionVisible] = useState(false); // Control explosion visibility
   const bombTimerRef = useRef(null);
+  const [gameTime, setGameTime] = useState('0:0:0');
   const defuseTimerRef = useRef(null);
   const [clickCount, setClickCount] = useState(0);
   const clickTimerRef = useRef(null);
@@ -78,6 +79,7 @@ function Home() {
     }
   };
 
+
   const triggerBombAppearance = () => {
     setIsBomb(true);
     const now = Math.floor(Date.now() / 1000);
@@ -131,6 +133,30 @@ function Home() {
     }
   };
 
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const now = Date.now();
+      const elapsedTime = Math.floor((now - data.intialTime));
+      if(data.intialTime === 0) {
+        updateData({
+          intialTime: now
+        });
+      }
+      else{
+        //format the time
+        const hours = Math.floor(elapsedTime / 3600000).toString().padStart(2, '0');
+        const minutes = Math.floor((elapsedTime % 3600000) / 60000).toString().padStart(2, '0');
+        const seconds = Math.floor((elapsedTime % 60000) / 1000).toString().padStart(2, '0');
+        setGameTime(`${hours}:${minutes}:${seconds}`);
+        
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [data]);
+
+
   const buttonClass = data.money >= levels[data.level].upgradeCost ? 'enabled' : 'disabled';
 
   // Function to check if the Global Market button should be displayed
@@ -138,9 +164,11 @@ function Home() {
 
   return (
     <div className="home-container">
+      
       {explosionVisible && <div className="explosion-overlay" />}
 
       <h2>{levels[data.level - 1].label}</h2>
+      <p>{gameTime}</p>
 
       {isBomb && (
         <div className="defuse-timer">
@@ -183,6 +211,7 @@ function Home() {
           🌟Countrball🌟Casino🌟
         </button>
       )}
+      
     </div>
   );
 }

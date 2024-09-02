@@ -13,7 +13,7 @@ function CostumPopup({
   wheatProduced,
 }) {
   if(!imageUrl || imageUrl === '' || imageUrl === 'default') {
-    imageUrl = 'images/usa_default.png';
+    imageUrl = 'icons/usa_default.png';
   }
   if (!isOpen) {
     return null; // Do not render if popup is not open

@@ -8,6 +8,7 @@ function Oil() {
   const { data, updateData } = useContext(DataContext);
   const [popupVisible, setPopupVisible] = useState(false);
   const [producedBarrels, setProducedBarrels] = useState(0);
+  const [oilPrice, setOilPrice] = useState(1.2);
 
   const filteredObjects = commodities.filter(object => object.tab === 'oil');
 
@@ -20,6 +21,8 @@ function Oil() {
     }
   };
 
+
+
   const totalProduction = () => {
     return filteredObjects.reduce((total, object) => {
       return total + (data[object.name] || 0) * object.production;
@@ -30,8 +33,16 @@ function Oil() {
     setPopupVisible(false);
   };
 
+  const handleSellAllOil = () => {
+    const totalMoneyEarned = (data.barrels || 0) * 2;
+    updateData({
+      money: data.money + totalMoneyEarned,
+      barrels: 0, // Reset barrels to 0 after selling
+    });
+  };
+
   useEffect(() => {
-    if(data.lastActivity < (Date.now()/1000 - 15)) {
+    if (data.lastActivity < (Date.now() / 1000 - 15)) {
       const now = Date.now();
       const lastUpdate = data.OilLastUpdate || now;
       const elapsedTime = (now - lastUpdate) / 1000; // Convert ms to seconds
@@ -77,6 +88,11 @@ function Oil() {
       />
 
       <div className="oil-container">
+        <p>Current global price for oil is {oilPrice} € per barrel</p>
+        <button className="sell-button" onClick={handleSellAllOil}>
+          Sell for {Math.floor((data.barrels || 0) * oilPrice)} €
+        </button>
+
         <div className="object-list">
           {filteredObjects.map((object) => (
             <div key={object.name} className="object-item">
@@ -85,8 +101,8 @@ function Oil() {
                 <p>Owned: {data[object.name] || 0}</p>
                 <p>Cost: ${object.cost}</p>
                 <p>
-                {object.message ? object.message : `Production: ${object.production} barrels/sec`}
-              </p>
+                  {object.message ? object.message : `Production: ${object.production} barrels/sec`}
+                </p>
               </div>
               <div className="object-action">
                 <button

@@ -113,3 +113,17 @@
     margin-left: 5px;
     filter: invert(100%);
 }
+
+
+.sell-button {
+    display: flex;
+    justify-content: center;
+    background-color: #303030b9;
+    border-radius: 20px;
+    font-weight: 900;
+    padding: 10px 10px;
+    width: 180px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-top: 0px;
+  }
+  

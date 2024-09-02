@@ -12,7 +12,7 @@ body {
   background-color: #1e1e1e;
 }
 
-h2 {
+.wheel-container h2 {
   color: #fff;
   margin-bottom: 20px;
 }
@@ -75,4 +75,16 @@ h2 {
   color: #fff;
   font-size: 18px;
   text-align: center;
+}
+
+
+.home-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #7f8c8d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
 }

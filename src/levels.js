@@ -8,38 +8,38 @@ const levels = [
   },
   {
     level: 2,
-    imageUrl: '/images/india.png', // Example for agriculture
-    label: 'India',
-    upgradeCost: 100,
-    specialMessage: 'Cultivating success!',
-  },
-  {
-    level: 3,
     imageUrl: '/images/saudi-arabia.png', // Example for oil
     label: 'Saudi Arabia',
-    upgradeCost: 5000,
+    upgradeCost: 100,
     specialMessage: 'Striking oil-rich prosperity!',
   },
   {
+    level: 3,
+    imageUrl: '/images/india.png', // Example for agriculture
+    label: 'India',
+    upgradeCost: 1000,
+    specialMessage: 'You unlocked farming!',
+  },
+  {
     level: 4,
-    imageUrl: '/images/russia.png', // Added Russia
-    label: 'Russia',
+    imageUrl: '/images/south-africa.png', // Example for a middle-income country
+    label: 'South Africa',
     upgradeCost: 25000,
-    specialMessage: 'Powering up with strength and resources!',
+    specialMessage: 'Rising to greater heights!',
   },
   {
     level: 5,
-    imageUrl: '/images/brazil.png', // Example for emerging market
-    label: 'Brazil',
+    imageUrl: '/images/russia.png', // Added Russia
+    label: 'Russia',
     upgradeCost: 120000,
-    specialMessage: 'Expanding horizons in the tropics!',
+    specialMessage: 'Powering up with strength and resources!',
   },
   {
     level: 6,
-    imageUrl: '/images/south-africa.png', // Example for a middle-income country
-    label: 'South Africa',
+    imageUrl: '/images/brazil.png', // Example for emerging market
+    label: 'Brazil',
     upgradeCost: 600000,
-    specialMessage: 'Rising to greater heights!',
+    specialMessage: 'Expanding horizons in the tropics!',
   },
   {
     level: 7,
@@ -73,7 +73,7 @@ const levels = [
     level: 11,
     imageUrl: '/images/china.png', // Added China
     label: 'China',
-    upgradeCost: 75000000000000,
+    upgradeCost: 750000000000000000000000000000000000000000000,
     specialMessage: 'Rising to the top of the world!',
   }
 ];
