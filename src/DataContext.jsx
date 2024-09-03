@@ -1,5 +1,9 @@
 import React, { createContext, useState, useEffect } from 'react';
 import levels from './levels'; // Adjust the import path as needed
+import CryptoJS from 'crypto-js';
+
+// Define a secret key for encryption (this should be stored securely)
+const SECRET_KEY = 'your-secret-key'; // Replace with your own secret key
 
 // Create the context
 export const DataContext = createContext();
@@ -10,15 +14,26 @@ export const DataProvider = ({ children }) => {
     money: 0,
     level: 1,
     specialMessageOpen: false,
-    levelData: null
+    levelData: null,
+    lastActivity: Date.now()/1000
+  };
+
+  const encryptData = (data) => {
+    return CryptoJS.AES.encrypt(JSON.stringify(data), SECRET_KEY).toString();
+  };
+
+  const decryptData = (ciphertext) => {
+    const bytes = CryptoJS.AES.decrypt(ciphertext, SECRET_KEY);
+    const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
+    return JSON.parse(decryptedData);
   };
 
   const [data, setData] = useState(() => {
     try {
       const savedData = localStorage.getItem('gameData');
       if (savedData) {
-        const parsedData = JSON.parse(savedData);
-        return parsedData;
+        const decryptedData = decryptData(savedData);
+        return decryptedData;
       } else {
         return defaultData;
       }
@@ -31,7 +46,8 @@ export const DataProvider = ({ children }) => {
   // Save data to local storage whenever it changes
   useEffect(() => {
     try {
-      localStorage.setItem('gameData', JSON.stringify(data));
+      const encryptedData = encryptData(data);
+      localStorage.setItem('gameData', encryptedData);
     } catch (error) {
       console.error('Failed to save gameData to localStorage:', error);
     }
@@ -54,8 +70,8 @@ export const DataProvider = ({ children }) => {
         }
       }
 
-
-      return {...updatedData,
+      return {
+        ...updatedData,
         lastActivity: Date.now()/1000,
       };
     });

@@ -17,11 +17,11 @@ function Farm() {
     if (data.money >= object.cost) {
       const updatedData = {
         money: data.money - object.cost,
-        [object.name]: (data[object.name] || 0) + 1}
-      
+        [object.name]: (data[object.name] || 0) + 1
+      };
       updateData(updatedData);
     }
-  }
+  };
 
   const totalProduction = () => {
     return filteredObjects.reduce((total, object) => {
@@ -31,6 +31,14 @@ function Farm() {
 
   const handlePopupClose = () => {
     setPopupVisible(false);
+  };
+
+  const handleSellAllWheat = () => {
+    const totalMoneyEarned = (data.wheat || 0) * 100;
+    updateData({
+      money: data.money + totalMoneyEarned,
+      wheat: 0, // Reset wheat to 0 after selling
+    });
   };
 
   useEffect(() => {
@@ -54,15 +62,14 @@ function Farm() {
   }, [data, updateData]);
 
   const fertilizerTimerAccel = () => {
-    const feritilzers = data.Fertilizer || 0;
-    const accel = feritilzers * 0.001;
-    let out = 60-accel
-    if(out < 0.6) {
+    const fertilizers = data.Fertilizer || 0;
+    const accel = fertilizers * 0.001;
+    let out = 60 - accel;
+    if (out < 0.6) {
       out = 0.6;
     }
-
     return out;
-  }
+  };
 
   useEffect(() => {
     const now = Date.now();
@@ -70,20 +77,18 @@ function Farm() {
 
     const updateFarm = () => {
       const currentTime = Date.now();
-      const elapsedTime = (currentTime - lastUpdate) / 1000; // Convert ms to minutes
+      const elapsedTime = (currentTime - lastUpdate) / 1000; // Convert ms to seconds
 
-      setTimer(fertilizerTimerAccel()-(elapsedTime));
+      setTimer(fertilizerTimerAccel() - elapsedTime);
       const productionRate = totalProduction();
       const producedWheat = Math.floor(elapsedTime * productionRate);
-      
-      if(elapsedTime >= fertilizerTimerAccel()) {
+
+      if (elapsedTime >= fertilizerTimerAccel()) {
         updateData({
           wheat: (data.wheat || 0) + producedWheat,
           FarmLastUpdate: currentTime,
         });
-        //setPopupVisible(true);
         lastUpdate = currentTime;
-        
       }
     };
 
@@ -92,7 +97,6 @@ function Farm() {
 
     return () => clearInterval(interval); // Cleanup on component unmount
   }, [data, updateData]);
-
 
   return (
     <div>
@@ -116,17 +120,21 @@ function Farm() {
           </div>
         </div>
 
+        <button className="sell-button" onClick={handleSellAllWheat}>
+          Sell all wheat for ${Math.floor((data.wheat || 0) * 100)}
+        </button>
+
         <div className="object-list">
           {filteredObjects.map((object) => (
             <div key={object.name} className="object-item">
-            <div className="object-details">
-              <h2>{object.name}</h2>
-              <p>Owned: {data[object.name] || 0}</p>
-              <p>Cost: ${object.cost}</p>
-              <p>
-                {object.message ? object.message : `Production: ${object.production} wheat/min`}
-              </p>
-            </div>
+              <div className="object-details">
+                <h2>{object.name}</h2>
+                <p>Owned: {data[object.name] || 0}</p>
+                <p>Cost: ${object.cost}</p>
+                <p>
+                  {object.message ? object.message : `Production: ${object.production} wheat/min`}
+                </p>
+              </div>
               <div className="object-action">
                 <button
                   onClick={() => handleBuy(object)}

@@ -10,14 +10,14 @@ const levels = [
     level: 2,
     imageUrl: '/images/saudi-arabia.png', // Example for oil
     label: 'Saudi Arabia',
-    upgradeCost: 100,
+    upgradeCost: 250,
     specialMessage: 'Striking oil-rich prosperity!',
   },
   {
     level: 3,
     imageUrl: '/images/india.png', // Example for agriculture
     label: 'India',
-    upgradeCost: 1000,
+    upgradeCost: 1700,
     specialMessage: 'You unlocked farming!',
   },
   {
@@ -45,35 +45,35 @@ const levels = [
     level: 7,
     imageUrl: '/images/italy.png', // Example for a developed European country
     label: 'Italy',
-    upgradeCost: 3000000,
+    upgradeCost: 30000000,
     specialMessage: 'Savoring the taste of success!',
   },
   {
     level: 8,
     imageUrl: '/images/uk.png', // Example for a wealthy European country
     label: 'United Kingdom',
-    upgradeCost: 15000000,
+    upgradeCost: 1500000000,
     specialMessage: 'Reigning in global prosperity!',
   },
   {
     level: 9,
     imageUrl: '/images/germany.png', // Example for a very wealthy European country
     label: 'Germany',
-    upgradeCost: 75000000,
+    upgradeCost: 75000000000,
     specialMessage: 'Leading with innovation and wealth!',
   },
   {
     level: 10,
     imageUrl: '/images/us.png', // Example for the richest country
     label: 'United States',
-    upgradeCost: 1500000000,
+    upgradeCost: 1500000000000,
     specialMessage: 'The pinnacle of success and wealth!',
   },
   {
     level: 11,
     imageUrl: '/images/china.png', // Added China
     label: 'China',
-    upgradeCost: 750000000000000000000000000000000000000000000,
+    upgradeCost: 7500000000000000000000000000000000000000000000000,
     specialMessage: 'Rising to the top of the world!',
   }
 ];

@@ -70,10 +70,10 @@ function Home() {
       if (clickCount === 0) {
         clickTimerRef.current = setTimeout(() => {
           setClickCount(0); // Reset click count after 25 seconds
-        }, 25000);
+        }, 15000);
       }
 
-      if (clickCount + 1 > 300) {
+      if (clickCount + 1 > 88) {
         triggerBombAppearance();
       }
     }

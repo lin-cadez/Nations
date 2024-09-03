@@ -48,8 +48,19 @@ function Shop() {
     { name: '20,000 Shares of Stock', value: 200000 },
     { name: 'Antique Collection', value: 150000 },
   ];
-  
+
   useEffect(() => {
+    const now = Date.now();
+
+    // Calculate remaining time when the component mounts
+    const remainingTime = Math.max(data.nextSpinTime - now, 0);
+
+    if (remainingTime <= 0) {
+      setNextSpinTime(0); // Set to 0 if cooldown has passed
+    } else {
+      setNextSpinTime(data.nextSpinTime); // Set remaining time
+    }
+
     const interval = setInterval(() => {
       const now = Date.now();
       const remainingTime = Math.max(nextSpinTime - now, 0);
@@ -58,7 +69,7 @@ function Shop() {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [nextSpinTime]);
+  }, [nextSpinTime, data.nextSpinTime]);
 
   const handleSpin = () => {
     const now = Date.now();
@@ -157,12 +168,8 @@ function Shop() {
         Click here (${spinCost})
       </button>
       <div className="timer-label">
-      
-      
         {remainingTime > 0 ? `Next spin in: ${formatTime(remainingTime)}` : 'You can spin now!'}
-
-        
-          </div>
+      </div>
 
       <CostumPopup
         isOpen={popupOpen}
