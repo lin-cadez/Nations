@@ -151,7 +151,7 @@ function Home() {
         setGameTime(`${hours}:${minutes}:${seconds}`);
         
       }
-    }, 1000);
+    }, 10);
 
     return () => clearInterval(interval);
   }, [data]);
