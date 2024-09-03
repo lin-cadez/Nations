@@ -11,14 +11,14 @@ const levels = [
     level: 2,
     imageUrl: '/images/india.png', // Example for agriculture
     label: 'India',
-    upgradeCost: 210,
+    upgradeCost: 100,
     specialMessage: 'You unlocked farming!',
   },
   {
     level: 3,
     imageUrl: '/images/saudi-arabia.png', // Example for oil
     label: 'Saudi Arabia',
-    upgradeCost: 1700,
+    upgradeCost: 210,
     specialMessage: 'Striking oil-rich prosperity!',
   },
   {
