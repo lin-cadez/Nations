@@ -2,7 +2,7 @@
 
 const commodities = [
     // Oil Page Objects
-  { name: 'Oil Drill', cost: 200, production: 5, icon: 'icons/oil.png', tab: 'oil' },
+  { name: 'Oil Drill', cost: 50, production: 5, icon: 'icons/oil.png', tab: 'oil' },
   { name: 'Sea Oil Platform', cost: 1200, production: 90, icon: 'icons/rig.png', tab: 'oil' },
   { name: 'Oil Field', cost: 87000, production: 950, icon: 'icons/oil-refinery.png', tab: 'oil' },
 
