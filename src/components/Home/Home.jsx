@@ -73,7 +73,7 @@ function Home() {
         }, 15000);
       }
 
-      if (clickCount + 1 > 88) {
+      if (clickCount + 1 > 110) {
         triggerBombAppearance();
       }
     }
