@@ -1,54 +1,92 @@
-/* Style for the register container */
 .register-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100%;
-    background-color: #f0f0f0;
-    background: linear-gradient(
-      to top,
-      #FF6F00, /* Bottom color (dark orange) */
-      #FFA726  /* Top color (lighter orange) */
-    );
-  }
-  
-  /* Style for the input field */
-  .register-input {
-    width: 80%;
-    max-width: 400px;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    text-align: center;
-  }
-  
-  /* Style for the register button */
-  .register-button {
-    width: 80%;
-    max-width: 400px;
-    padding: 10px 20px;
-    background-color: #000000;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .register-button:disabled {
-    background-color: #ccc;
-  }
-  
-  /* Additional styling for the h2 title */
-  .register-container h2 {
-    margin-bottom: 30px;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-  }
-  
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.register-input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.register-button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.flag-editor {
+  margin-top: 20px;
+}
+
+.color-picker {
+  margin: 10px 0;
+}
+
+.flag-text-input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.flag-preview {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 20px auto;
+  position: relative;
+}
+
+.flag-preview-stripes {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stripe {
+  height: 33.33%;
+}
+
+.stripe1 {
+  background-color: #ff0000;
+}
+
+.stripe2 {
+  background-color: #ffffff;
+}
+
+.stripe3 {
+  background-color: #0000ff;
+}
+
+.flag-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
+.image-upload {
+  margin-top: 20px;
+}
+
+.flag-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.image-preview {
+  margin-top: 10px;
+}
