@@ -1,92 +1,217 @@
+/* Register.css */
 .register-container {
-  width: 300px;
-  margin: 0 auto;
-  text-align: center;
+  width: 100%;
+  background-color: #f7f7f7;
 }
 
-.register-input {
+h2, h3, h4 {
+  text-align: center;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+}
+
+.register-input,
+.color-picker,
+.text-size-input,
+.flag-text-input,
+select {
+  display: block;
   width: 100%;
   padding: 10px;
-  margin: 10px 0;
+  margin: 10px 0 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.register-input:focus,
+.color-picker:focus,
+.text-size-input:focus,
+.flag-text-input:focus,
+select:focus {
+  outline: none;
+  border-color: #007bff;
 }
 
 .register-button {
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
   border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+  background-color: #0056b3;
 }
 
 .flag-editor {
-  margin-top: 20px;
-}
-
-.color-picker {
-  margin: 10px 0;
-}
-
-.flag-text-input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
+  margin: 20px 0;
 }
 
 .flag-preview {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+  width: 300px;
+  height: 300px;
   margin: 20px auto;
   position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e6e6e6;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .flag-preview-stripes {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 }
 
 .stripe {
-  height: 33.33%;
-}
-
-.stripe1 {
-  background-color: #ff0000;
-}
-
-.stripe2 {
-  background-color: #ffffff;
-}
-
-.stripe3 {
-  background-color: #0000ff;
+  flex: 1;
+  width: 100%;
 }
 
 .flag-content {
   position: absolute;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 18px;
-  font-weight: bold;
-  color: black;
+}
+
+.stripe-count {
+  text-align: center;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.stripe-count button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: 1px solid #007bff;
+  background-color: white;
+  color: #007bff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.stripe-count button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Place color pickers for stripes in a 3x2 grid (including text color) */
+.stripe-colors {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.color-picker {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+.text-size-input {
+  max-width: 80px;
   text-align: center;
 }
 
-.image-upload {
+.orientation-control {
+  text-align: center;
   margin-top: 20px;
 }
 
-.flag-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
+.orientation-control img {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
-.image-preview {
-  margin-top: 10px;
+.orientation-control img:hover {
+  transform: scale(1.1);
 }
+
+.text-settings{
+  flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+.text-settings span{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+@media screen and (max-width: 600px) {
+  .flag-preview {
+    width: 200px;
+    height: 200px;
+  }
+
+  .register-container {
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .register-button {
+    font-size: 16px;
+  }
+
+  .stripe-colors {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-content: center;
+  }
+
+  .color-picker {
+    margin-bottom: 10px;
+  }
+}
+
+.font-picker {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.font-picker:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
