@@ -1,6 +1,6 @@
 const navbarConfig = {
-    oil: 3,
-    farm: 7,
+    oil: 5,
+    farm: 5,
     shop: 5,
   };
   
